@@ -1,12 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.23",
+  "version": "1.0.31",
   "description": "this is clean",
   "scripts": {
-    "start": "./react.sh"
+    "start": "node index.js"
   },
   "bin": {
-    "monzoor-clean-template": "react.sh"
+    "react-auto-clean-template": "index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/monzoor/react-auto-clean-template/issues"
   },
-  "homepage": "https://github.com/monzoor/react-auto-clean-template#readme"
+  "homepage": "https://github.com/monzoor/react-auto-clean-template#readme",
+  "dependencies": {
+    "react-auto-clean-template": "^1.0.29",
+    "shelljs": "^0.8.4"
+  }
 }
