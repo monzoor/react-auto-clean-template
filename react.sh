@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm i react-clean-template
+yes yes | npm i react-clean-template
 
 npx create-react-app new
 cp -a node_modules/react-clean-template/rootConfigs/. new
