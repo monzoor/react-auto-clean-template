@@ -1,12 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "scripts": {
     "start": "./react.sh"
   },
   "bin": {
-    "create-react-template": "react.sh"
+    "monzoor-clean-template": "react.sh"
   },
   "repository": {
     "type": "git",
