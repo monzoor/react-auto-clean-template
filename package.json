@@ -3,7 +3,7 @@
   "version": "1.0.46",
   "description": "this is clean",
   "scripts": {
-    "start": "node bin/index.js"
+    "start": "node bin/init.js"
   },
   "bin": {
     "react-auto-clean-template": "bin/index.js"
