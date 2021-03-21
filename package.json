@@ -1,6 +1,6 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "this is clean",
   "scripts": {
     "start": "node bin/index.js"
