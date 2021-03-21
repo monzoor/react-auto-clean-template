@@ -6,7 +6,8 @@
     "start": "node bin/init.js"
   },
   "bin": {
-    "react-auto-clean-template": "bin/index.js"
+    "react-auto-clean-template": "bin/index.js",
+    "init-temp": "bin/init.js"
   },
   "repository": {
     "type": "git",
