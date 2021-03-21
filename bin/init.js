@@ -7,4 +7,4 @@ const args = [];
 cp.spawn("bash", [path.join(__dirname, "init.sh")].concat(args), {
   stdio: "inherit",
 });
-console.log("Done wow");
+console.log("Done wow init");
