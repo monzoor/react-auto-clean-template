@@ -1,12 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "scripts": {
-    "catemp": "./react.sh"
+    "start": "./react.sh"
   },
   "bin": {
-    "catemp": "react.sh"
+    "react-auto-clean-template": "react.sh"
   },
   "repository": {
     "type": "git",
