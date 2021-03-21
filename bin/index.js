@@ -7,4 +7,4 @@ const args = [];
 cp.spawn("bash", [path.join(__dirname, "react.sh")].concat(args), {
   stdio: "inherit",
 });
-console.log("Done");
+console.log("Done wow");
