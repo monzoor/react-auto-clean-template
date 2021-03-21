@@ -1,6 +1,6 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.11",
+  "version": "1.0.23",
   "description": "this is clean",
   "scripts": {
     "start": "./react.sh"
