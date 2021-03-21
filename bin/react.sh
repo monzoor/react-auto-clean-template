@@ -30,8 +30,7 @@ rm -rf new/src/index.js.bak
 
 rm -rf new/node_modules
 rm -rf new/.git
-mv new/.* .
-mv new/* .
+mv new/* ./
 rm -rf new react-auto-template
 
 rm -rf src/index.js.bak
