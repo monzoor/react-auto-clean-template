@@ -2,4 +2,4 @@
 
 npm i react-auto-clean-template
 
-npx init-temp
+node node_modules/react-auto-clean-template/bin/init.js

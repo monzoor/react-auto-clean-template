@@ -1,13 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "this is clean",
   "scripts": {
     "start": "node bin/init.js"
   },
   "bin": {
-    "react-auto-clean-template": "bin/index.js",
-    "init-temp": "bin/init.js"
+    "react-auto-clean-template": "bin/index.js"
   },
   "repository": {
     "type": "git",
