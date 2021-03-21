@@ -1,12 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "scripts": {
     "start": "./react.sh"
   },
   "bin": {
-    "react-auto-clean-template": "react.sh"
+    "create-react-template": "react.sh"
   },
   "repository": {
     "type": "git",
