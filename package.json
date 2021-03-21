@@ -1,0 +1,21 @@
+{
+  "name": "react-auto-clean-template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean-auto-template": "./react.sh"
+  },
+  "bin": {
+    "clean-auto-template": "react.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monzoor/react-auto-clean-template.git"
+  },
+  "author": "Monzoor Morshed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monzoor/react-auto-clean-template/issues"
+  },
+  "homepage": "https://github.com/monzoor/react-auto-clean-template#readme"
+}
