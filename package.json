@@ -1,12 +1,12 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.31",
+  "version": "1.0.37",
   "description": "this is clean",
   "scripts": {
-    "start": "node index.js"
+    "start": "node bin/index.js"
   },
   "bin": {
-    "react-auto-clean-template": "index.js"
+    "react-auto-clean-template": "bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/monzoor/react-auto-clean-template#readme",
   "dependencies": {
-    "react-auto-clean-template": "^1.0.29",
-    "shelljs": "^0.8.4"
+    "child_process": "^1.0.2",
+    "path": "^0.12.7"
   }
 }
