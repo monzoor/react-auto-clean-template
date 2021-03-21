@@ -1,10 +1,10 @@
 #!/bin/bash
 
-yes yes | npm i react-clean-template
+yes yes | npm i react-auto-clean-template
 
 npx create-react-app new
-cp -a node_modules/react-clean-template/rootConfigs/. new
-cp -a node_modules/react-clean-template/template/. new/src
+cp -a node_modules/react-auto-clean-template/rootConfigs/. new
+cp -a node_modules/react-auto-clean-template/template/. new/src
 
 sed -i.bak 's/react-scripts start/craco start/g' new/package.json
 sed -i.bak 's/react-scripts build/craco build/g' new/package.json
@@ -15,7 +15,7 @@ sed -i.bak 's/"eject": "react-scripts eject"/ /g' new/package.json
 sed -i -e 's/"eslintConfig"/insert\
 &/' new/package.json
 
-sed -i -e '/insert/r node_modules/react-clean-template/copyItems/jestAlias' new/package.json 
+sed -i -e '/insert/r node_modules/react-auto-clean-template/copyItems/jestAlias' new/package.json 
 
 sed -i.bak 's/insert/ /g' new/package.json
 
