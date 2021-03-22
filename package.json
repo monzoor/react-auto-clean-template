@@ -20,6 +20,7 @@
   "private": false,
   "homepage": "https://github.com/monzoor/react-auto-clean-template#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
     "child_process": "^1.0.2",
     "path": "^0.12.7"
   }
