@@ -10,5 +10,3 @@ const args = [];
 cp.spawn('bash', [path.join(__dirname, 'react.sh')].concat(args), {
   stdio: 'inherit',
 });
-
-console.log(chalk.green('Your template is ready.\nHappy working!!!'));
