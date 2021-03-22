@@ -1,6 +1,6 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "description": "this is clean",
   "scripts": {
     "start": "node bin/init.js"
@@ -22,6 +22,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
+    "fs": "^0.0.1-security",
     "path": "^0.12.7"
   }
 }
