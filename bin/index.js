@@ -14,6 +14,7 @@ const item = {
 };
 
 var json = JSON.stringify(item);
+
 fs.writeFile('./package.json', json, (err) => {
   if (err) {
     console.error(err);
