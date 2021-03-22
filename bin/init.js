@@ -15,12 +15,12 @@ async function spawnChild() {
 
   for await (const chunk of child.stdout) {
     console.log(`${chalk.green('Process: ')} ${chunk}`);
-    let i = 0;
+    // let i = 0;
 
-    setInterval(() => {
-      const { frames } = spinner;
-      logUpdate(chalk.yellow('working ') + frames[(i = ++i % frames.length)]);
-    }, spinner.interval);
+    // setInterval(() => {
+    //   const { frames } = spinner;
+    //   logUpdate(chalk.yellow('working ') + frames[(i = ++i % frames.length)]);
+    // }, spinner.interval);
 
     data += chunk;
   }
