@@ -37,6 +37,6 @@ rm -rf package.json-e
 
 yarn add react-redux react-router-dom redux redux-devtools-extension redux-thunk i18next react-i18next bootstrap@next node-sass @craco/craco craco-alias
 
-git init
-git add .
-git commit -am "Initialize project with react clean architecuture"
+# git init
+# git add .
+# git commit -am "Initialize project with react clean architecuture"
