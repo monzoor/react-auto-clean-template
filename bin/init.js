@@ -11,7 +11,11 @@ async function spawnChild() {
 
   let data = '';
   for await (const chunk of child.stdout) {
-    console.log('Process: ' + chunk);
+    if (chunk !== '') {
+      console.log(
+        chalk.green('Process ' + chalk.bold('with a blue substring' + chunk)),
+      );
+    }
     data += chunk;
   }
   let error = '';
@@ -32,7 +36,7 @@ async function spawnChild() {
 spawnChild().then(
   (data) => {
     console.log(chalk.keyword('orange')('Finalizing...'));
-    console.log('async result:\n' + data);
+    console.log(chalk.green('async result:\n' + data));
     console.log(chalk.green('Your template is ready.\nHappy working!!!'));
   },
   (err) => {
