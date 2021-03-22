@@ -27,15 +27,15 @@ sed -i.bak 's/import '\''.\/index.css'\'';/ /g' new/src/index.js
 rm -rf new/src/index.js.bak
 
 rm -rf new/node_modules
-# rm -rf new/.git
-# mv new/* ./
-# rm -rf new react-auto-template
+rm -rf new/.git
+mv new/* ./
+rm -rf new react-auto-template
 
-# rm -rf src/index.js.bak
-# rm -rf package.json-e
+rm -rf src/index.js.bak
+rm -rf package.json-e
 
 
-# yarn add react-redux react-router-dom redux redux-devtools-extension redux-thunk i18next react-i18next bootstrap@next node-sass @craco/craco craco-alias
+yarn add react-redux react-router-dom redux redux-devtools-extension redux-thunk i18next react-i18next bootstrap@next node-sass @craco/craco craco-alias
 
 # git init
 # git add .
