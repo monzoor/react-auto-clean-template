@@ -27,7 +27,7 @@ sed -i.bak 's/import '\''.\/index.css'\'';/ /g' new/src/index.js
 rm -rf new/src/index.js.bak
 
 rm -rf new/node_modules
-rm -rf new/.git
+# rm -rf new/.git
 mv new/* ./
 rm -rf new react-auto-template
 

@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-// const cp = require('child_process');
 const path = require('path');
 const chalk = require('chalk');
 
@@ -12,12 +11,12 @@ async function spawnChild() {
 
   let data = '';
   for await (const chunk of child.stdout) {
-    console.log(chalk.yellow('stdout chunk: ' + chunk));
+    console.log('Process: ' + chunk);
     data += chunk;
   }
   let error = '';
   for await (const chunk of child.stderr) {
-    console.error(chalk.red('stderr chunk: ' + chunk));
+    console.error(+chunk);
     error += chunk;
   }
   const exitCode = await new Promise((resolve, reject) => {
@@ -32,6 +31,7 @@ async function spawnChild() {
 
 spawnChild().then(
   (data) => {
+    console.log(chalk.keyword('orange')('Finalizing...'));
     console.log('async result:\n' + data);
     console.log(chalk.green('Your template is ready.\nHappy working!!!'));
   },
