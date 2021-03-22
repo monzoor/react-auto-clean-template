@@ -12,9 +12,7 @@ async function spawnChild() {
   let data = '';
   for await (const chunk of child.stdout) {
     if (chunk !== '') {
-      console.log(
-        chalk.green('Process ' + chalk.bold('with a blue substring' + chunk)),
-      );
+      console.log(`${chalk.green('Process: ')} with a blue substring ${chunk}`);
     }
     data += chunk;
   }
