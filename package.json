@@ -1,9 +1,10 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.62",
+  "version": "1.0.0",
   "description": "this is clean",
   "scripts": {
-    "start": "node bin/init.js"
+    "start": "node src/init.js",
+    "dev": "node src/index.js"
   },
   "bin": {
     "react-auto-clean-template": "bin/index.js"
@@ -24,6 +25,7 @@
     "child_process": "^1.0.2",
     "cli-spinners": "^2.6.0",
     "fs": "^0.0.1-security",
+    "log-update": "^4.0.0",
     "path": "^0.12.7"
   }
 }
