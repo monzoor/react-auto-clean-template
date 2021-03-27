@@ -3,28 +3,32 @@
 const path = require('path');
 const chalk = require('chalk');
 const { spawn } = require('child_process');
+const logUpdate = require('log-update');
 
-async function spawnChild(fileNameWithPath, args) {
-  const child = spawn(
-    'bash',
-    [path.join(__dirname, fileNameWithPath)].concat(args),
-  );
-
+async function spawnChild({ args = [], command, paths, bashFile }) {
+  let child = '';
   let data = '';
-
-  for await (const chunk of child.stdout) {
-    console.log(`${chalk.green('Process: ')} ${chunk}`);
-    data += chunk;
-  }
   let error = '';
-  for await (const chunk of child.stderr) {
-    console.error(`${chunk}`);
-    error += chunk;
-  }
+
+  const newArguments =
+    command === 'bash' ? [path.join(__dirname, bashFile)].concat(args) : args;
+
+  child = spawn(command, newArguments, {
+    cwd: paths,
+  });
+
+  child.stdout.on('data', (data) => {
+    logUpdate.clear();
+    console.log(`${chalk.green(`Process:`)} ${data}`);
+  });
+
+  child.stderr.on('data', (data) => {
+    console.error(`${data}`);
+  });
+
   const exitCode = await new Promise((resolve, reject) => {
     child.on('close', resolve);
   });
-
   if (exitCode) {
     throw new Error(chalk.red(`subprocess error exit ${exitCode}, ${error}`));
   }

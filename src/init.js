@@ -32,8 +32,9 @@ async function spawnChild() {
 spawnChild().then(
   (data) => {
     console.log(chalk.keyword('orange')('Finalizing...'));
-    console.log(chalk.green('async result:\n' + data));
+    // console.log(chalk.green('async result:\n' + data));
     console.log(chalk.green('Your template is ready.\nHappy working!!!'));
+    process.exit();
   },
   (err) => {
     console.error(chalk.red('async error:\n' + err));

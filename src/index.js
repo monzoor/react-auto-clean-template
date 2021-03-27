@@ -1,74 +1,72 @@
 #! /usr/bin/env node
 
-const { exec } = require('child_process');
+const { exec, spawn } = require('child_process');
 const path = require('path');
 const chalk = require('chalk');
-// const logUpdate = require('log-update');
+const logUpdate = require('log-update');
 
 const packageJsonData = require('./constants/packageJson');
 const fileCreator = require('./utils/fileCreator');
 const FILE_NAMES = require('./constants/fileNames');
 const spawnChild = require('./utils/spawnChild');
-// const frames = ['-', '\\', '|', '/'];
-// let i = 0;
+const templateProcessor = require('./templateProcessor');
 
-// const tt = () => {
-//   const frame = frames[(i = ++i % frames.length)];
-//   logUpdate(`${chalk.yellow(frame)}`);
-// };
+const frames = ['-', '\\', '|', '/'];
+let i = 0;
 
-const clearThis = '../';
+const spinner = () => {
+  const frame = frames[(i = ++i % frames.length)];
+  logUpdate(chalk.yellow(`Working... ${frame}`));
+};
 
-function init() {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function init() {
   const args = process.argv.slice(2);
   const folderName = args[0];
+  /**
+   * Creating folder from argument
+   */
   if (!folderName) {
     console.log(`${chalk.red('No folder name provided')}`);
     process.exit(1);
   }
-  console.log(chalk.keyword('orange')('Initializing something AWESOME...'));
-  exec(`mkdir ${clearThis + folderName}`);
+  exec(`mkdir ${folderName}`);
+  console.log(chalk.rgb(30, 203, 225)('Initializing something AWESOME...'));
+  await sleep(50);
 
+  /**
+   * Creating package.json for starting template
+   */
   fileCreator({
-    path: `${clearThis + folderName}/${FILE_NAMES.JSON_FILE}`,
+    path: `./${folderName}/${FILE_NAMES.JSON_FILE}`,
     data: packageJsonData,
   });
 
-  // console.log(chalk.keyword('orange')('Initializing...'));
+  console.log(chalk.blue('Starting CRA...'));
 
-  // console.log('WOWOWO');
-  // setTimeout(() => {
-  //   logUpdate.clear();
-
-  //   logUpdate.done();
-  //   process.exit(1);
-  // }, 3000);
-  // throw new Error('name not found');
-  // console.error('name not found');
-  // fileCreator({
-  //   path: PATHS.JSON_FILE,
-  //   data: packageJsonData,
-  // });
-  // exec(`cd ${clearThis}`);
-  // exec('npm i bootstrap');
-  // exec('yarn start');
-
-  spawnChild('./react.sh').then(
-    (data) => {
-      // console.log(chalk.keyword('orange')('Finalizing...'));
-      console.log(chalk.green('async result:\n' + data));
-      // console.log(chalk.green('Your template is ready.\nHappy working!!!'));
-    },
-    (err) => {
-      console.error(chalk.red('async error:\n' + err));
-    },
-  );
+  const cra = await spawn('npx', ['create-react-app', 'new', '-y'], {
+    stdio: 'inherit',
+    cwd: folderName,
+  });
+  cra.on('exit', async function () {
+    console.log(chalk.green('Fetching clean architecture template...'));
+    await spawnChild({
+      command: 'npm',
+      args: ['i', 'react-auto-clean-template@latest', '--yes', '--force'],
+      paths: `./${folderName}`,
+    }).then(
+      async () => {
+        console.log(chalk.yellowBright('Project initialized'));
+        await templateProcessor({ args });
+      },
+      (err) => {
+        console.error(chalk.red('async error 111:\n' + err));
+      },
+    );
+  });
 }
 
 init();
-// console.log(process.argv.slice(2));
-
-// const args = [];
-// cp.spawn('bash', [path.join(__dirname, 'react.sh')].concat(args), {
-//   stdio: 'inherit',
-// });

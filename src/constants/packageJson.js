@@ -1,8 +1,8 @@
+#! /usr/bin/env node
+
 const CONFIGS = require('../configs/config');
 
 const packageJsonData = {
-  scripts: {
-    start: CONFIGS.START,
-  },
+  private: true,
 };
 module.exports = packageJsonData;

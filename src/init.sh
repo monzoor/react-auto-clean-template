@@ -1,6 +1,7 @@
 #!/bin/bash
 
-npx create-react-app new
+echo "Creacting template"
+
 cp -a node_modules/react-auto-clean-template/rootConfigs/. new
 cp -a node_modules/react-auto-clean-template/template/. new/src
 
@@ -28,7 +29,10 @@ rm -rf new/src/index.js.bak
 
 rm -rf new/node_modules
 rm -rf new/.git
+
 mv new/* ./
+mv new/.* ./
+
 rm -rf new react-auto-template
 
 rm -rf src/index.js.bak

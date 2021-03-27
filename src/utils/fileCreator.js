@@ -1,4 +1,6 @@
-var fs = require('fs');
+#! /usr/bin/env node
+
+const fs = require('fs');
 
 const fileCreator = ({ path, data }) => {
   const jsonData = JSON.stringify(data, null, 2);

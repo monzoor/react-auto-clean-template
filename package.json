@@ -1,13 +1,13 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.0",
+  "version": "1.0.110",
   "description": "this is clean",
   "scripts": {
-    "start": "node src/init.js",
-    "dev": "node src/index.js"
+    "dev": "node src/index.js tempos",
+    "clean": "npm cache clean --force && yarn cache clean && rm -rf /Users/monzoormorshed/.npm/_npx"
   },
   "bin": {
-    "react-auto-clean-template": "bin/index.js"
+    "react-auto-clean-template": "src/index.js"
   },
   "repository": {
     "type": "git",
