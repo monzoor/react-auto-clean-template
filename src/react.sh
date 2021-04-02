@@ -2,4 +2,4 @@
 
 npm i react-auto-clean-template
 
-yarn start
+npm start

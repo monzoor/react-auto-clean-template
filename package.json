@@ -1,6 +1,6 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.110",
+  "version": "1.0.114",
   "description": "this is clean",
   "scripts": {
     "dev": "node src/index.js tempos",
@@ -25,6 +25,7 @@
     "child_process": "^1.0.2",
     "cli-spinners": "^2.6.0",
     "fs": "^0.0.1-security",
+    "fs-extra": "^9.1.0",
     "log-update": "^4.0.0",
     "path": "^0.12.7"
   }
