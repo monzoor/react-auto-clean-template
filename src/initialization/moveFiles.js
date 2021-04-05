@@ -2,25 +2,18 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 
 const errorHandler = require('../utils/errorHandler');
+const { folderName } = require('../utils/arguments');
 
-const moveFiles = async (folderName) => {
+const moveFiles = async () => {
   try {
     await fs.copy(
       `${process.cwd()}/${folderName}/new`,
       `${process.cwd()}/${folderName}/`,
     );
-    return chalk.green('Files moved');
+    return `Process: ${chalk.green('Moving files\n')}`;
   } catch (err) {
     errorHandler(err);
   }
-
-  //   sleep(200);
-  //   console.log('----2---');
-  //   exec(`rm -rf ${process.cwd()}/${folderName}/new`);
-  //   await copyDir(
-  //     path.join(__dirname, '../rootConfigs'),
-  //     `${process.cwd()}/${folderName}/`,
-  //   );
 };
 
 module.exports = moveFiles;

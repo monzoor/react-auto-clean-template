@@ -3,10 +3,11 @@ const fs = require('fs');
 
 const errorHandler = require('../utils/errorHandler');
 const { PACKAGE_JSON_CONFIG } = require('../configs/config');
+const { folderName } = require('../utils/arguments');
 
-const updateCRAPackageJson = async (folderName) => {
+const updateCRAPackageJson = async () => {
   let packageJson = {};
-  const newJsonLocation = `${process.cwd()}/${folderName}/new/package.json`;
+  const newJsonLocation = `${process.cwd()}/${folderName}/package.json`;
 
   try {
     const jsonData = await fs.readFileSync(newJsonLocation);
@@ -20,7 +21,7 @@ const updateCRAPackageJson = async (folderName) => {
     const jsonString = JSON.stringify(packageJson, null, 2);
     await fs.writeFileSync(newJsonLocation, jsonString);
 
-    return chalk.green('Updated package.json');
+    return `Process: ${chalk.green('Updating packages\n')}`;
   } catch (err) {
     errorHandler(err);
   }

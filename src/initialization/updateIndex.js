@@ -2,9 +2,10 @@ const chalk = require('chalk');
 const fs = require('fs');
 
 const errorHandler = require('../utils/errorHandler');
+const { folderName } = require('../utils/arguments');
 
-const updateIndex = async (folderName) => {
-  const newIndex = `${process.cwd()}/${folderName}/new/src/index.js`;
+const updateIndex = async () => {
+  const newIndex = `${process.cwd()}/${folderName}/src/index.js`;
 
   try {
     let appJs = await fs.readFileSync(newIndex).toString();
@@ -15,7 +16,7 @@ const updateIndex = async (folderName) => {
       "import App from './Core';\n",
     );
     await fs.writeFileSync(newIndex, appJs);
-    return chalk.green('Index file has been changed');
+    return `Process: ${chalk.green('Changing sources\n')}`;
   } catch (err) {
     errorHandler(err);
   }

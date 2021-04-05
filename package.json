@@ -1,7 +1,14 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.0.114",
-  "description": "this is clean",
+  "version": "1.1.1",
+  "description": "Clean architecture based react template with the help of CRA (Create react app)",
+  "keywords": [
+    "clean architecture",
+    "template",
+    "react template",
+    "CRA",
+    "create react app"
+  ],
   "scripts": {
     "dev": "node src/index.js tempos",
     "clean": "npm cache clean --force && yarn cache clean && rm -rf /Users/monzoormorshed/.npm/_npx"
@@ -13,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/monzoor/react-auto-clean-template.git"
   },
-  "author": "Monzoor Morshed",
+  "author": "Monzoor Morshed Mahmud",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/monzoor/react-auto-clean-template/issues"
@@ -23,7 +30,6 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
-    "cli-spinners": "^2.6.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^9.1.0",
     "log-update": "^4.0.0",

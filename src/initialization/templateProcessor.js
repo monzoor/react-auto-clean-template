@@ -1,35 +1,33 @@
-const spawnChild = require('./utils/spawnChild');
+const spawnChild = require('../utils/spawnChild');
 const chalk = require('chalk');
 const logUpdate = require('log-update');
 
-const frames = ['-', '\\', '|', '/'];
-let i = 0;
+const FILE_NAMES = require('../constants/fileNames');
 
-const spinner = () => {
-  const frame = frames[(i = ++i % frames.length)];
-  logUpdate(chalk.yellow(`Working... ${frame}`));
-};
+const { args } = require('../utils/arguments');
+const spinner = require('../utils/spinner');
 
-const templateProcessor = async ({ args }) => {
+const templateProcessor = async () => {
+  console.log(
+    `Process: ${chalk.yellow('Please wait! It`s gonna take time\n')}`,
+  );
   let startSpinner = 0;
 
   startSpinner = setInterval(spinner, 80);
   await spawnChild({
     command: 'bash',
     args,
-    bashFile: '../../src/init.sh',
+    bashFile: FILE_NAMES.PACKAGE_BASH,
     paths: args[0],
   }).then(
     () => {
       clearInterval(startSpinner);
       logUpdate.clear();
       console.log(chalk.keyword('orange')('Finalizing...'));
-      // console.log(chalk.green('async result:\n' + data));
       console.log(chalk.green('Your template is ready.\nHappy working!!!'));
-      // process.exit();
     },
     (err) => {
-      console.error(chalk.red('async error 222:\n' + err));
+      console.error(chalk.red('async error :\n' + err));
     },
   );
 };
