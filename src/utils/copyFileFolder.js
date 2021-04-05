@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const path = require('path');
 const { promises: fs } = require('fs');
 
-const errorHandler = require('../utils/errorHandler');
+const errorHandler = require('./errorHandler');
 
 const copyDir = async (src, dest) => {
   try {

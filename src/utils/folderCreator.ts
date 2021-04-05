@@ -11,4 +11,4 @@ const createFolder = async () => {
   exec(`mkdir ${folderName}`);
 };
 
-module.exports = createFolder;
+export default createFolder;

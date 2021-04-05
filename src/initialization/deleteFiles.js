@@ -4,7 +4,7 @@ const fs = require('fs');
 const errorHandler = require('../utils/errorHandler');
 const { folderName } = require('../utils/arguments');
 
-const deleteFiles = async (deleteList) => {
+const deleteFiles = async (deleteList: Array) => {
   try {
     deleteList.map(async (item) => {
       await fs.rmSync(`${process.cwd()}/${folderName}/${item}`, {
