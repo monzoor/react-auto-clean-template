@@ -1,9 +1,3 @@
-#! /usr/bin/env node
-
-const CONFIG = {
-  START: 'node node_modules/react-auto-clean-template/src/init.js',
-};
-
 const PACKAGE_JSON_CONFIG = {
   scripts: {
     start: 'craco start',
@@ -23,4 +17,4 @@ const PACKAGE_JSON_CONFIG = {
     },
   },
 };
-export { CONFIG, PACKAGE_JSON_CONFIG };
+export { PACKAGE_JSON_CONFIG };

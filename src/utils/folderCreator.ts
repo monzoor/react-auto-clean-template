@@ -1,4 +1,3 @@
-#! /usr/bin/env node
 import chalk from 'chalk';
 import { exec } from 'child_process';
 import { folderName } from '../utils/arguments';
