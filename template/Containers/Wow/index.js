@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div>
-      this is wow page. <Link to="/">home</Link>
+      this is wow. <Link to="/">home</Link>
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import { PATHS } from "@constants";
+import { PATHS } from '@constants';
 
-import Home from "@containers/Home";
-import Wow from "@containers/Wow";
+import Home from '@containers/Home';
+import Wow from '@containers/Wow';
+import NotFound from '@containers/NotFound';
 
 const routes = [
   {
@@ -11,6 +12,10 @@ const routes = [
   {
     path: PATHS.WOW,
     component: Wow,
+  },
+  {
+    path: '*',
+    component: NotFound,
   },
 ];
 

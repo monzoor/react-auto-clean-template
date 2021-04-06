@@ -1,11 +1,6 @@
-#! /usr/bin/env node
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PACKAGE_JSON_CONFIG = exports.CONFIG = void 0;
-const CONFIG = {
-    START: 'node node_modules/react-auto-clean-template/src/init.js',
-};
-exports.CONFIG = CONFIG;
+exports.PACKAGE_JSON_CONFIG = void 0;
 const PACKAGE_JSON_CONFIG = {
     scripts: {
         start: 'craco start',
