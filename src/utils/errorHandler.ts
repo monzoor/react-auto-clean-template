@@ -1,6 +1,6 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const errorHandler = (err) => {
+const errorHandler = (err: any) => {
   if (typeof err === 'object') {
     if (err.message) {
       console.log(chalk.red('\nMessage: ') + err.message);
@@ -19,4 +19,4 @@ const errorHandler = (err) => {
   process.exit();
 };
 
-module.exports = errorHandler;
+export default errorHandler;

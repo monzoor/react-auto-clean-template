@@ -25,4 +25,4 @@ const FILE_NAMES = {
   PACKAGE_BASH: '../../src/scripts/packages.sh',
 };
 
-module.exports = FILE_NAMES;
+export default FILE_NAMES;
