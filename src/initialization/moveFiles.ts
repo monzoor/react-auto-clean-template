@@ -1,8 +1,9 @@
-const chalk = require('chalk');
-const fs = require('fs-extra');
+import chalk from 'chalk';
 
-const errorHandler = require('../utils/errorHandler');
-const { folderName } = require('../utils/arguments');
+import errorHandler from '../utils/errorHandler';
+import { folderName } from '../utils/arguments';
+
+const fs = require('fs-extra');
 
 const moveFiles = async () => {
   try {
@@ -16,4 +17,4 @@ const moveFiles = async () => {
   }
 };
 
-module.exports = moveFiles;
+export default moveFiles;

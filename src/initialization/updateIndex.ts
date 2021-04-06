@@ -1,8 +1,9 @@
-const chalk = require('chalk');
-const fs = require('fs');
+import chalk from 'chalk';
 
-const errorHandler = require('../utils/errorHandler');
-const { folderName } = require('../utils/arguments');
+import errorHandler from '../utils/errorHandler';
+import { folderName } from '../utils/arguments';
+
+const fs = require('fs');
 
 const updateIndex = async () => {
   const newIndex = `${process.cwd()}/${folderName}/src/index.js`;
@@ -22,4 +23,4 @@ const updateIndex = async () => {
   }
 };
 
-module.exports = updateIndex;
+export default updateIndex;

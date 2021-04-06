@@ -1,10 +1,9 @@
-const chalk = require('chalk');
-const path = require('path');
+import path from 'path';
+import errorHandler from '../utils/errorHandler';
+
 const { promises: fs } = require('fs');
 
-const errorHandler = require('./errorHandler');
-
-const copyDir = async (src, dest) => {
+const copyDir = async (src: string, dest: string) => {
   try {
     await fs.mkdir(dest, { recursive: true });
     let entries = await fs.readdir(src, { withFileTypes: true });
@@ -28,4 +27,4 @@ const copyDir = async (src, dest) => {
   }
 };
 
-module.exports = copyDir;
+export default copyDir;

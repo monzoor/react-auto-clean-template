@@ -1,9 +1,10 @@
-const chalk = require('chalk');
-const fs = require('fs');
+import chalk from 'chalk';
 
-const errorHandler = require('../utils/errorHandler');
-const { PACKAGE_JSON_CONFIG } = require('../configs/config');
-const { folderName } = require('../utils/arguments');
+import errorHandler from '../utils/errorHandler';
+import { folderName } from '../utils/arguments';
+import { PACKAGE_JSON_CONFIG } from '../configs/config';
+
+const fs = require('fs');
 
 const updateCRAPackageJson = async () => {
   let packageJson = {};
@@ -27,4 +28,4 @@ const updateCRAPackageJson = async () => {
   }
 };
 
-module.exports = updateCRAPackageJson;
+export default updateCRAPackageJson;

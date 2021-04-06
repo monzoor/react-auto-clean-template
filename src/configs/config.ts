@@ -23,7 +23,4 @@ const PACKAGE_JSON_CONFIG = {
     },
   },
 };
-module.exports = {
-  CONFIG,
-  PACKAGE_JSON_CONFIG,
-};
+export { CONFIG, PACKAGE_JSON_CONFIG };

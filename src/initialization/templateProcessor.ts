@@ -1,19 +1,19 @@
-const spawnChild = require('../utils/spawnChild');
-const chalk = require('chalk');
-const logUpdate = require('log-update');
+import chalk from 'chalk';
+import logUpdate from 'log-update';
 
-const FILE_NAMES = require('../constants/fileNames');
+import FILE_NAMES from '../constants/fileNames';
 
-const { args } = require('../utils/arguments');
-const spinner = require('../utils/spinner');
+import { args } from '../utils/arguments';
+
+import spinner from '../utils/spinner';
+import spawnChild from '../utils/spawnChild';
 
 const templateProcessor = async () => {
   console.log(
     `Process: ${chalk.yellow('Please wait! It`s gonna take time\n')}`,
   );
-  let startSpinner = 0;
 
-  startSpinner = setInterval(spinner, 80);
+  let startSpinner = setInterval(spinner, 80);
   await spawnChild({
     command: 'bash',
     args,
@@ -32,4 +32,4 @@ const templateProcessor = async () => {
   );
 };
 
-module.exports = templateProcessor;
+export default templateProcessor;

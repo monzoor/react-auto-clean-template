@@ -1,19 +1,23 @@
 #! /usr/bin/env node
 
-const path = require('path');
-const chalk = require('chalk');
-const { spawn } = require('child_process');
-const logUpdate = require('log-update');
+import path from 'path';
+import chalk from 'chalk';
+import logUpdate from 'log-update';
+import { spawn } from 'child_process';
 
-async function spawnChild({ args = [], command, paths, bashFile }) {
-  let child = '';
+const spawnChild = async ({
+  args = [],
+  command = '',
+  paths = '',
+  bashFile = '',
+}) => {
   let data = '';
   let error = '';
 
   const newArguments =
     command === 'bash' ? [path.join(__dirname, bashFile)].concat(args) : args;
 
-  child = spawn(command, newArguments, {
+  let child = spawn(command, newArguments, {
     cwd: paths,
   });
 
@@ -33,6 +37,6 @@ async function spawnChild({ args = [], command, paths, bashFile }) {
     throw new Error(chalk.red(`subprocess error exit ${exitCode}, ${error}`));
   }
   return data;
-}
+};
 
-module.exports = spawnChild;
+export default spawnChild;

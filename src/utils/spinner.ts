@@ -1,5 +1,5 @@
-const logUpdate = require('log-update');
-const chalk = require('chalk');
+import chalk from 'chalk';
+import logUpdate from 'log-update';
 
 const frames = ['-', '\\', '|', '/'];
 let i = 0;
@@ -9,4 +9,4 @@ const spinner = () => {
   logUpdate(chalk.yellow(`Working... ${frame}`));
 };
 
-module.exports = spinner;
+export default spinner;

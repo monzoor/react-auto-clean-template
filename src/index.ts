@@ -1,28 +1,25 @@
-#! /usr/bin/env node
-
-const { spawn } = require('child_process');
-const chalk = require('chalk');
+import { spawn } from 'child_process';
+import chalk from 'chalk';
 
 // UTILS
-const sleep = require('./utils/sleep');
-const createFolder = require('./utils/folderCreator');
-
-// Initializer
-const updateCRAPackageJson = require('./initialization/updateCRAPackageJson');
-const updateIndex = require('./initialization/updateIndex');
-const copyTemplate = require('./initialization/copyTemplate');
-const deleteFiles = require('./initialization/deleteFiles');
-const moveFiles = require('./initialization/moveFiles');
-const templateProcessor = require('./initialization/templateProcessor');
+import sleep from './utils/sleep';
+import createFolder from './utils/folderCreator';
+import { folderName } from './utils/arguments';
 
 // CONSTANTS
-const FILE_NAMES = require('./constants/fileNames');
-const { folderName } = require('./utils/arguments');
+import FILE_NAMES from './constants/fileNames';
+
+// Initializer
+import deleteFiles from './initialization/deleteFiles';
+import moveFiles from './initialization/moveFiles';
+import updateCRAPackageJson from './initialization/updateCRAPackageJson';
+import updateIndex from './initialization/updateIndex';
+import copyTemplate from './initialization/copyTemplate';
+import templateProcessor from './initialization/templateProcessor';
 
 console.time('Total time');
 const init = async () => {
   await createFolder();
-
   console.log(chalk.blue('Starting CRA...'));
 
   await sleep(1000);
@@ -62,8 +59,6 @@ const init = async () => {
       console.log(response);
       await templateProcessor();
     });
-
-    console.timeEnd('Total time');
   });
 };
 
