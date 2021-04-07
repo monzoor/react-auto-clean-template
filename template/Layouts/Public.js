@@ -1,5 +1,12 @@
+import { Menu } from '@components';
+
 const PublicLayout = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <>
+      <Menu />
+      {children}
+    </>
+  );
 };
 
 export default PublicLayout;

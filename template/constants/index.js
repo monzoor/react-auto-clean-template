@@ -1,1 +1,1 @@
-export { PATHS } from "./url";
+export { default as PATHS } from './url';

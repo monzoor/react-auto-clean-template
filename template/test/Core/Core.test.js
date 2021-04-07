@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
-import '@testing-library/jest-dom/extend-expect';
 
 import renderWithRouter from '../utils/render';
 
@@ -17,9 +16,9 @@ test('full app rendering/navigating', () => {
   expect(screen.getByText(/this is home/i)).toBeInTheDocument();
 
   const leftClick = { button: 0 };
-  userEvent.click(screen.getByText(/wow/i), leftClick);
+  userEvent.click(screen.getByText(/page 1/i), leftClick);
 
-  expect(screen.getByText(/this is wow/i)).toBeInTheDocument();
+  expect(screen.getByText(/this is page 1/i)).toBeInTheDocument();
 });
 
 test('landing on a bad page', () => {
