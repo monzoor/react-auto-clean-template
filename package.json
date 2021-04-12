@@ -1,6 +1,6 @@
 {
   "name": "react-auto-clean-template",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Clean architecture based react template with the help of CRA (Create react app)",
   "keywords": [
     "clean architecture",
