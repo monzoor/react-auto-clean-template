@@ -45,12 +45,12 @@ If by chance, an essential part of the application core MUST BE an external depe
     .
     ├── public
     └── src
-    	├── Components				# All common components
-    	├── Containers				# All pages
-    	├── Core					# Base redux, base redux store, base layouts, routes setup
-    	├── Layouts					# Public, private layouts
-    	├── Routes					# Public, private route configurations
-    	├── constants				# All constants
-    	├── reducers				# All reducers
-    	├── styles					# Styles. SCSS
-    	└── test					# Test
+    	├── Components      # All common components
+    	├── Containers      # All pages
+    	├── Core            # Base redux, base redux store, base layouts, routes setup
+    	├── Layouts         # Public, private layouts
+    	├── Routes          # Public, private route configurations
+    	├── constants       # All constants
+    	├── reducers        # All reducers
+    	├── styles          # Styles. SCSS
+    	└── test            # Test
