@@ -2,6 +2,10 @@
 
 Create react template with clean architecture.
 
+#### Feedback
+
+https://forms.gle/wAmoScfKzdsTEXEHA
+
 ## Quick Overview
 
 ```sh
