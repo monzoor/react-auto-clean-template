@@ -2,14 +2,21 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["Components/*", "Components/index.js"],
-      "@assets/*": ["assets/*", "assets/index.js"],
-      "@actions/*": ["actions/*", "actions/index.js"],
-      "@utils/*": ["utils/*", "utils/index.js"],
-      "@validations/*": ["validations/*", "validations/index.js"],
-      "@helpers/*": ["helpers/*", "helpers/index.js"],
-      "@constants/*": ["constants/*", "constants/index.js"],
-      "@containers/*": ["Containers/*", "Containers/index.js"]
+      "@components": ["Components/index.js"],
+      "@components/*": ["Components/*"],
+      "@assets/*": ["assets/*"],
+      "@actions": ["actions/index.js"],
+      "@actions/*": ["actions/*"],
+      "@utils": ["utils/index.js"],
+      "@utils/*": ["utils/*"],
+      "@validations": ["validations/index.js"],
+      "@validations/*": ["validations/*"],
+      "@helpers": ["helpers/index.js"],
+      "@helpers/*": ["helpers/*"],
+      "@constants": ["constants/index.js"],
+      "@constants/*": ["constants/*"],
+      "@containers": ["Containers/index.js"],
+      "@containers/*": ["Containers/*"]
     }
   }
 }
