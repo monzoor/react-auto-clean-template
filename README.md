@@ -1,6 +1,6 @@
 # react-auto-template
 
-Create react template with clean architecture.
+Create react template with clean architecture. Included with react routing, redux, redux-thunk, Bootstrap. Just install and start your coding.
 
 #### Feedback
 
