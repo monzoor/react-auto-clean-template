@@ -9,7 +9,7 @@ https://forms.gle/wAmoScfKzdsTEXEHA
 ## Quick Overview
 
 ```sh
-npx react-auto-clean-template my-app
+npx react-auto-clean-template@latest my-app
 cd my-app
 npm start
 ```
